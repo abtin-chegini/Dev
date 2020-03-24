@@ -1,0 +1,7 @@
+
+{
+
+"mongoURI" :"mongodb+srv://cheg:Iddqtkfa@cluster0-skzfz.mongodb.net/test?retryWrites=true&w=majority",
+"jwtSecret":"mysecrettoken"
+
+}
