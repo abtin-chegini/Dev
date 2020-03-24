@@ -88,14 +88,13 @@ router.post(
 
         if (req.user.id.match(/^[0-9a-fA-F]{24}$/)) {
           profile = await Profile.findByIdAndUpdate(
-            { user: String(req.user.id) },
+            { user: req.user.id },
             { $set: profileFields },
             { new: true }
           );
           return res.json(profile);
           // Yes, it's a valid ObjectId, proceed with `findById` call.
         }
-      
       }
 
       //Create Profile
