@@ -72,7 +72,7 @@ router.post(
         .map(skill => skill.trim());
     }
     console.log(profileFields.skills);
-    res.send("Hello");
+    
     // Social
     profileFields.social = {};
     if (youtube) profileFields.social.youtube = youtube;
@@ -82,12 +82,12 @@ router.post(
     if (instagram) profileFields.social.instagram = instagram;
 
     try {
-      let profile = Profile.findOne({ user: req.user.id });
+      let profile = await Profile.findOne({ user: req.user.id });
       if (profile) {
         //Update
 
         if (req.user.id.match(/^[0-9a-fA-F]{24}$/)) {
-          profile = await Profile.findByIdAndUpdate(
+          profile = await Profile.findOneAndUpdate(
             { user: req.user.id },
             { $set: profileFields },
             { new: true }
