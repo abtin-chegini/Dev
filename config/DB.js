@@ -6,7 +6,7 @@ console.log(ar);
 
 
 
- const db= "mongodb+srv://cheg:Iddqtkfa@cluster0-skzfz.mongodb.net/test?retryWrites=true&w=majority";
+ const db= "";
 
 mongoose.connect(db,{
 useNewUrlParser : true,
